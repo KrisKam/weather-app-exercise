@@ -16,6 +16,10 @@
   padding: 15px;
 }
 
+@media screen and (min-width: 880px){
+  .StartPage-line-break { display: none; }
+}
+
 .NoResult-container {
   margin-top: 10%;
   text-align: center;

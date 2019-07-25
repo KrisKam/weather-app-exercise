@@ -13,7 +13,7 @@ const Today = ({ weather }) => {
  
   return (
     <Container className="text-white">
-      <Row>
+      <Row className="align-items-center">
         <Col md="5" sm="6">
           <Row className="h3">{title}, {parentTitle}</Row>
         </Col>

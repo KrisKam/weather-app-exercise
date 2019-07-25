@@ -1,5 +1,6 @@
 import React from "react";
 import { CardGroup } from 'reactstrap';
+import "./Forecast.css";
 import ForecastCard from "./ForecastCard";
 
 
@@ -11,7 +12,7 @@ const Forecast = ({ weather }) => {
   })
 
   return (
-    <CardGroup>
+    <CardGroup className="Forecast-cardGroup">
       {cards}
     </CardGroup>
   )

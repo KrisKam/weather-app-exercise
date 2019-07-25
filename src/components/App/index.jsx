@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./styles.css";
-
 import SearchBar from "../SearchBar";
 import StartPage from "../StartPage";
 import SearchResults from "../SearchResults";
@@ -14,6 +13,7 @@ class App extends Component {
     selectedLocation: null,
     weather: null,
     display: "block",
+    displayWeather: "block",
     result: null,
   }
 
@@ -29,7 +29,8 @@ class App extends Component {
         } else {
           this.setState({
             locations: data,
-            display: "block", 
+            display: "block",
+            displayWeather: "block", 
             weather: null,
             result: "data-received"
           })
@@ -52,19 +53,29 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  onReset = () => {
+    this.setState({
+      locations: [],
+      displayWeather: "none",
+      result: null,
+    })
+  }
+
   render() { 
+
+    const { locations, result, weather, display, displayWeather } = this.state;
 
     return (
       <div className="App">
         <header className="App-header">
-          <SearchBar onLocationSubmit={this.onLocationSubmit}/>
+          <SearchBar onLocationSubmit={this.onLocationSubmit} onReset={this.onReset}/>
         </header>
-        {this.state.locations.length === 0 && this.state.result !== "none" &&
+        {locations.length === 0 && result !== "none" &&
           <StartPage />
         } 
-        {this.state.result === "none" && <NoResult />}
-        <SearchResults locations={this.state.locations} onLocationSelect={this.onLocationSelect} display={this.state.display}/> 
-        <CurrentWeather weather={this.state.weather}/>
+        {result === "none" && <NoResult />}
+        <SearchResults locations={locations} onLocationSelect={this.onLocationSelect} display={display}/> 
+        <CurrentWeather weather={weather} displayWeather={displayWeather}/>
       </div>
     )
   }

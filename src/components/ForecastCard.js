@@ -13,7 +13,7 @@ const ForecastCard = (props) => {
   const description = props.dailyWeather.weather_state_name;
 
   return (
-    <Card className="text-center">
+    <Card className="text-center ForecastCard-card"> 
       <CardImg top width="50%" src={require(`./images/${props.imageCode}.png`)} alt={description} />
       <CardBody>
         <CardTitle>{date[0]} {date[1]} {date[2]}</CardTitle>

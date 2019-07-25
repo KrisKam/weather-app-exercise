@@ -9,7 +9,12 @@ const StartPage = () => {
     <Jumbotron fluid>
       <Container fluid className="StartPage-container">
         <h1 className="display-3">Find your weather</h1>
-        <p className="lead font-weight-bold">It's always <img className="StartPage-img" src={sun} alt="sunny"/> in Denver.</p>
+        <p className="lead font-weight-bold">
+          It's always 
+          <br className="StartPage-line-break"/>
+          <img className="StartPage-img" src={sun} alt="sunny"/> 
+          <br className="StartPage-line-break"/>
+          in Denver.</p>
       </Container>
     </Jumbotron>
   )

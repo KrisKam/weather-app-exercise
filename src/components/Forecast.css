@@ -5,6 +5,22 @@
   padding: 15px;
 }
 
+.CurrentWeather-container-none {
+  display: none;
+}
+
+.CurrentWeather-container-block {
+  display: block;
+}
+
+.Forecast-cardGroup {
+  margin-top: 4%;
+}
+
+.ForecastCard-card {
+  padding-top: 2%;
+}
+
 .card-img-top {
   width: 50%;
   display: block;

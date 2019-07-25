@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Form, Input, Button } from "reactstrap";
+import { Navbar, NavbarBrand, Form, Input, Button } from "reactstrap";
 import "./Search.css";
 
 
@@ -23,11 +23,20 @@ class SearchBar extends Component {
     })
   }
 
+  onReset = () => {
+    this.props.onReset();
+    this.setState({
+      location: ""
+    })
+  }
+
   render() {
 
     return (
       <Navbar color="dark" className="text-warning" expand="medium">
-        Weather App
+        <NavbarBrand onClick={this.onReset}> 
+          Weather App
+        </NavbarBrand>
         <Form onSubmit={this.onFormSubmit} inline>
           <Input
             bsSize="sm"
