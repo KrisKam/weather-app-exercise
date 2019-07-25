@@ -1,0 +1,25 @@
+#SearchBar-input {
+  width: 20em;
+}
+
+.SearchResults-container-none {
+  display: none;
+}
+
+.SearchResults-container-block {
+  display: block;
+  text-align: center;
+  margin-top: 10%;
+  max-width: 60%;
+  background-color: black;
+  color: white;
+  padding: 15px;
+}
+
+.NoResult-container {
+  margin-top: 10%;
+  text-align: center;
+  background-color: #dc3446;
+  color: white;
+  padding: 10px;
+}
